@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0ef431d8-04d6-456a-828e-bf85c7146ec9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1bCgJZwUUC6TsR1FVuzJ4yL6vtV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ef431d8-04d6-456a-828e-bf85c7146ec9" name="Default Changelist" comment="" />
+      <created>1588141418727</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588141418727</updated>
+      <workItem from="1588141420487" duration="24000" />
+      <workItem from="1606756662537" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1859" y="-902" width="791" height="1863" key="dock-window-1" timestamp="1588141444179">
+      <screen x="-2160" y="-902" width="1080" height="1890" />
+    </state>
+    <state x="-1859" y="-902" width="791" height="1863" key="dock-window-1/3840.0.1920.1057/-2160.-902.1080.1890/0.0.2560.1409@0.0.2560.1409" timestamp="1588141444179" />
+    <state x="291" y="203" width="791" height="1863" key="dock-window-2" timestamp="1588141444179">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="291" y="203" width="791" height="1863" key="dock-window-2/3840.0.1920.1057/-2160.-902.1080.1890/0.0.2560.1409@0.0.2560.1409" timestamp="1588141444179" />
+  </component>
+</project>

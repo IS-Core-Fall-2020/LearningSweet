@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+<!--This will inherit the main structure of the base.html-->
+{% load static %}
+
+
+
+{% block backgroundImg %}                                                                               <!--Make sure to put static in front of static files!!!!-->
+<div class="page-header header-filter blur-filter" data-parallax="true" style="background-image: url( {% static 'img/byuLibrary.jpg' %}  );">
+{% endblock %}
+
+
+{% block mainTitle %}
+<h1 style= "color: white; -webkit-text-stroke: 0px #282828; text-shadow: 0px 4px 4px #282828;">Current Assignments for Group {{ group.group_name }}</h1>
+{% endblock %}
+
+
+{% block subTitle %}
+<h3 style= "color: white;	-webkit-text-stroke: 1px #282828; text-shadow: 0px 4px 4px #282828;"><b>View the assignments below to work with your group!</b></h3>
+
+{% endblock %}
+
+
+
+{% block mainBody %}
+
+
+<div class="text-right">
+    <a class="btn btn-primary" style="background-color: #428BCA" href={% url 'newassign' groupID=group.id %} >Create a New Assignment</a>
+</div>
+
+<h2>Assignments</h2>
+{% comment %} For loop displays all assignments of the current group {% endcomment %}
+    {% for assign in assign_list %}
+    
+        <div class="main main-raised" style='margin: 50px'>
+            <div class='container' style='margin: 20px; '>
+                    <br>
+                    {% if assign.assign_completion == False %}
+                        <h3 style='color:red;'>{{assign.assign_name}}</h3>
+                        {% else %}
+                        <h3 style='color:#428BCA;'>{{assign.assign_name}}</h3>
+                        {% endif %}
+                    <hr style= "margin-right:40px">
+                    <div>Description: {{assign.assign_description}}</div>
+
+                    <hr style= "margin-right:40px">
+
+                    <div><b>Assignment Details</b></div>
+                        {% comment %} Changes color and message based off of whether the assignment is complete or not {% endcomment %}
+                        Due: {{assign.assign_duedate}}<br>
+                        {% if assign.assign_completion == False %}
+                        <div style='color:red; align:right'>INCOMPLETE</div>
+                        {% else %}
+                        <div style='color:#428BCA; align:right'>Completed</div>
+                        {% endif %}
+                         <br>
+                        <div style="text-align:right; margin-right:30px">
+                           <a href="/viewassignments/edit/{{assign.id}}/{{group.id}}" ><i class="material-icons">create</i> Edit</a>
+                        </div>
+                   
+                    <br>
+            </div>
+        </div>
+    
+    {% endfor %}
+
+{% endblock %}
