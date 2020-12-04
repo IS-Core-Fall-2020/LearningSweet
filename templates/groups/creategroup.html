@@ -1,0 +1,102 @@
+<!--CREATE GROUP page-->
+
+{% extends 'base.html' %}
+<!--This will inherit the main structure of the base.html-->
+{% load static %}
+
+
+
+{% block backgroundImg %}                                                                               <!--Make sure to put static in front of static files!!!!-->
+<div class="page-header header-filter blur-filter" data-parallax="true" style="background-image: url( {% static 'img/byucampus.jpg'%}  );">
+{% endblock %}
+
+
+{% block mainTitle %}
+<h1 style= "color: white;	-webkit-text-stroke: 0px #282828; text-shadow: 0px 4px 4px #282828;">Create a Group</h1>
+{% endblock %}
+
+
+{% block subTitle %}
+<!--<h2 style= "color: white;	-webkit-text-stroke: 0px #282828; text-shadow: 0px 4px 4px #282828;">Welcome to my personal website!</h2>-->
+
+{% endblock %}
+
+
+
+{% block mainBody %}
+
+<h2>New Group Info</h2>
+
+   <form role="form" action="/viewgroups/editgroup{% if parameter %}/{{ parameter.id }}{% endif %}/" method="POST" >
+        <div class="main main-raised" style='margin: 50px'>
+            <div class='container' style='margin: 20px; '>
+                    <br>
+                    <h3>{{ group.group_name }}</h3> 
+                    <hr style= "margin-right:40px">
+                    {% csrf_token %}
+                    {% load widget_tweaks %}
+                    {% for field in form %}
+                    {{ field.label_tag }}
+                    {{ field|append_attr:"class:form-control" }}
+                    <br>
+                    <br>
+                    <br>
+                    {% endfor %}
+                <button type="submit">Create Group</button>
+                    <br>
+            </div>
+        </div>
+        <div class="card-footer clearfix">
+            {% if parameter %}
+                <input class="btn btn-danger float-left"  type="submit" value="Delete" name="delete">
+            {% endif %}
+            <input class="btn btn-primary float-right"  type="submit" value="Save">
+        </div>
+    </form>
+
+
+
+
+
+
+
+    {% comment %} <form name='createGroup' method='post' action="{% url 'newgroup' %}">
+        {% csrf_token %}
+        <label for='groupName'>Group Name: </label>
+        <input type="text" name='groupName' id='groupName'><br><br>
+        <label for='groupDesc'>Group Description: </label>
+        <input type="text" name='groupDesc' id='groupDesc'>
+       
+        <select name='user1' id='user1'>
+            <option value=" "> </option>
+            {% for u in user_list %}
+            <option value="{{ u }}">{{ u }}</option>
+            {% endfor %}
+        </select>
+
+        <select name='user2' id='user2'>
+            <option value=" "> </option>
+            {% for u in user_list %}
+            <option value="{{ u }}">{{ u }}</option>
+            {% endfor %}
+        </select>
+
+        <select name='user3' id='user3'>
+            <option value=" "> </option>
+            {% for u in user_list %}
+            <option value="{{ u }}">{{ u }}</option>
+            {% endfor %}
+        </select>
+
+        <select name='user4' id='user4'>
+            <option value=" "> </option>
+            {% for u in user_list %}
+            <option value="{{ u }}">{{ u }}</option>
+            {% endfor %}
+        </select>
+        
+        <button type="submit">Create Group</button>
+    </form>
+     {% endcomment %}
+
+{% endblock %}
